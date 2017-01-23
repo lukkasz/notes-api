@@ -9,6 +9,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 app.use(bodyParser.json());
 app.use('/', routes);
+app.use(express.static('public'));
 
 app.listen(port, () => {
   console.log('Server is running on port', port);
