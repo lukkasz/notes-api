@@ -2,7 +2,7 @@ import axios from 'axios';
 import { 
   FETCH_ALL_NOTES,
   NOTE_SELECTED
-} from 'app/const';
+} from 'app/constants/ActionTypes';
 
 export function fetchNotes(notes) {
   return {

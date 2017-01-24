@@ -1,4 +1,4 @@
-import { FETCH_ALL_NOTES } from 'app/const';
+import { FETCH_ALL_NOTES } from 'app/constants/ActionTypes';
 
 export default function reducerNotes(state = [], action) {
   switch (action.type) {
