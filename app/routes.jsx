@@ -1,23 +1,13 @@
 import React from 'react';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import { Provider } from 'react-redux';
+import {  Route, IndexRoute } from 'react-router';
 
 import Main from 'app/components/Main';
-import Home from 'app/components/Home'
-import Test from 'app/components/Test';
-
-import configureStore from 'app/store/configureStore';
-const store = configureStore();
+import NotesWrapper from 'app/components/NotesWrapper';
 
 const routes = (
-  <Provider store={store}>
-    <Router history={hashHistory}>
-      <Route path='/' component={Main}>
-        <IndexRoute component={Home} />
-        <Route path="test" component={Test} />
-      </Route>
-    </Router>
-  </Provider>
-)
+  <Route path='/' component={Main}>
+    <IndexRoute component={NotesWrapper} />
+  </Route>
+);
 
 export default routes;
