@@ -2,10 +2,12 @@ import React from 'react';
 
 export default function(props) {
   return(
-    <div className="container">
-      <h1 className="headline">Main</h1>
+    <div className="main-header">
+      <h1 className="main-headline">Notes</h1>
       <hr/>
-      {props.children}
+      <div className="container">
+        {props.children}
+      </div>
     </div>  
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 export default function NotesList(props) {
   return(
@@ -14,6 +15,9 @@ export default function NotesList(props) {
           );
         })}
       </ul>
+      <Link to="/newNote">
+        <button className="btn btn-success">Create Note</button>
+      </Link>
     </div>
   );
 }
@@ -21,4 +25,4 @@ export default function NotesList(props) {
 NotesList.propTypes = {
   notes: React.PropTypes.array.isRequired,
   onSelectNote: React.PropTypes.func.isRequired
-}
+};

@@ -18,12 +18,10 @@ class NotesContainer extends Component {
   }
   
   handleSelectNote(note) {
-    console.log("note selected!!!", note);
     this.props.selectNote(note);
   }
   
   render() {
-    console.log("Props", this.props);
     return (
       <div className="row">
         <div className="col-sm-4">

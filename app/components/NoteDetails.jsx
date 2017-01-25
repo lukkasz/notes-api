@@ -7,7 +7,7 @@ export default function NoteDetails(props) {
   return (
     <div>
       <h1>{props.activeNote.title}</h1>
-      <div>{props.activeNote.content}</div>
+      <pre>{props.activeNote.content}</pre>
     </div>
   );
 }

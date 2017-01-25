@@ -1,15 +1,17 @@
 import axios from 'axios';
 import { 
   FETCH_ALL_NOTES,
-  NOTE_SELECTED
+  NOTE_SELECTED,
+  ADD_NOTE
 } from 'app/constants/ActionTypes';
 
-export function fetchNotes(notes) {
+function fetchNotes(notes) {
   return {
     type: FETCH_ALL_NOTES,
     payload: notes
   };
 }
+
 
 export function startFetchNotes(){
   return (dispatch) => {
@@ -28,3 +30,28 @@ export function selectNote(note) {
     payload: note
   }
 }
+
+
+function addNote(note) {
+  return {
+    type: ADD_NOTE,
+    payload: note
+  }
+}
+
+export function startAddNote(title, content){
+  return (dispatch) => {
+    return axios.post('/notes', {
+      title,
+      content
+    }).then((response) => {
+      //console.log("Rsponse from post", response.data)
+      dispatch(addNote(response.data));
+    }).catch((e) => {
+      console.warn(e);
+    });
+  }
+}
+
+
+
