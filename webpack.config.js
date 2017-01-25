@@ -10,12 +10,20 @@ module.exports = {
     filename: './public/bundle.js'
   },
   module: {
-    loaders: [{
-      test: /\.jsx$/,
-      loaders: ['babel-loader?presets[]=react,presets[]=es2015,presets[]=stage-1'],
-      include: path.join(__dirname, 'app'),
-      exclude: /node_modules/
-    }]
+    loaders: [
+      {
+        test: /\.jsx$/,
+        loaders: ['babel-loader?presets[]=react,presets[]=es2015,presets[]=stage-1'],
+        include: path.join(__dirname, 'app'),
+        exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style','css','sass'],
+        include: path.join(__dirname, 'app'),
+        exclude: /node_modules/
+      }
+    ]
   },
   resolve: {
     root: path.resolve(__dirname),
